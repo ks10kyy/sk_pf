@@ -349,7 +349,7 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
 @media (max-width: 768px) {
   .section-title {
     display: flex;
-    flex-wrap: wrap;       /* スマホで改行を許可 */
+    flex-wrap: nowrap;       /* スマホで改行を許可 */
     justify-content: center; /* 中央寄せ */
     font-size: 1.8rem;     /* 少し小さくする */
     text-align: center;
