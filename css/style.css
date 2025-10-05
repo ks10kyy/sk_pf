@@ -279,26 +279,42 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
   margin: 0;
 }
 
+/* チェックマーク用の疑似要素 */
 #marketing-checklist .checklist-group li {
-  display: flex;       /* ✔ と文字を横並び */
-  align-items: center; /* ✔ と文字の縦位置を揃える */
+  position: relative; /* ::beforeの基準にする */
+  padding-left: 28px; /* チェックマーク分の余白を確保 */
   margin-bottom: 10px;
-  gap: 6px;            /* ✔ と文字の間隔 */
-  justify-content: flex-start; /* PCでは左寄せ */
 }
 
+/* チェックマーク */
 #marketing-checklist .checklist-group li::before {
   content: "✔";
-  color: #0000ff !important; /* ← これで固定 */
+  color: #0000ff !important; /* 青色に固定 */
   font-weight: bold;
   font-size: 1rem;
-  flex-shrink: 0; /* ✔が潰れないように */
+  position: absolute;  /* ラベルの左に固定配置 */
+  left: 0;
+  top: 0;
+  line-height: 1;      /* 高さを詰める */
+}
+
+/* ラベル自体はそのまま表示 */
+#marketing-checklist .checklist-group li label {
+  display: block;      /* 縦並び維持 */
+  margin: 0;
+  padding: 0;
 }
 
 /* スマホ用 */
 @media (max-width: 768px) {
   #marketing-checklist .checklist-group li {
-    justify-content: center; /* スマホでは中央寄せ */
+    text-align: center;
+    padding-left: 0;      /* 中央寄せ時は余白不要 */
+  }
+  #marketing-checklist .checklist-group li::before {
+    position: static;      /* 絶対配置を解除 */
+    display: inline-block;
+    margin-right: 6px;     /* 文字との間隔 */
   }
 }
 
