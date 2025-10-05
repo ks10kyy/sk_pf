@@ -289,9 +289,10 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
 
 #marketing-checklist .checklist-group li::before {
   content: "✔";
-  color: #0000ff;
+  color: #0000ff !important; /* ← これで固定 */
   font-weight: bold;
   font-size: 1rem;
+  flex-shrink: 0; /* ✔が潰れないように */
 }
 
 /* スマホ用 */
@@ -322,6 +323,22 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
   margin: 50px 0 30px;
 }
 .title-icon { width: 40px; transform: translateY(5px); }
+
+@media (max-width: 768px) {
+  .section-title {
+    display: flex;
+    flex-wrap: wrap;       /* スマホで改行を許可 */
+    justify-content: center; /* 中央寄せ */
+    font-size: 1.8rem;     /* 少し小さくする */
+    text-align: center;
+  }
+
+  .section-title img {
+    width: 32px;           /* アイコンを少し小さく */
+    margin-bottom: 8px;    /* 折り返し時に余白を取る */
+  }
+}
+
 
 
 
