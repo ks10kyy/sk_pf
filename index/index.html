@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ポートフォリオ</title>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .content-section .inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* ===== スキル欄のレイアウト修正 ===== */
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      gap: 20px;
+    }
+    .skill-title {
+      font-weight: bold;
+      flex: 0 0 200px; /* 左側の幅 */
+    }
+    .skill-detail {
+      flex: 1; /* 右側は残り幅 */
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">SK-tsu</div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="header-nav" id="nav">
+      <ul>
+        <li><a href="#home-section"><img class="list-icon" src="./img/home.png" alt=""> TOP</a></li>
+        <li><a href="#html-section"><img class="list-icon" src="./img/person.png" alt=""> 自己紹介</a></li>
+        <li><a href="#css-section"><img class="list-icon" src="./img/study.png" alt=""> できること</a></li>
+        <li><a href="#js-section"><img class="list-icon" src="./img/work.png" alt=""> 作品</a></li>
+        <li><a href="#contact-section"><img class="list-icon" src="./img/contact.png" alt=""> お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switch">
+      <a href="#" class="lang-btn" data-lang="ja">JA</a> /
+      <a href="#" class="lang-btn" data-lang="en">EN</a>
+    </div>
+  </header>
+  <main>
+    <section id="home-section" class="hero">
+      <div class="hero-inner">
+        <div class="hero-profile">
+          <h1 class="hero-name">
+            <span class="first">〇</span><br>〇 <br>Portfolio
+          </h1>
+          <div class="hero-image">
+            <img src="./img/top.jpg" alt="プロフィール画像">
+          </div>
+        </div>
+      </div>
+    </sec
+    tion>
+
+    <section id="html-section" class="content-section">
+      <div class="inner">
+        <h2 class="section-title"><img src="./img/person.png" alt="person" class="title-icon"> 自己紹介</h2>
+
+        <div class="column-wrapper">
+          <div class="column">
+            <h3 class="underline-title">はじめまして</h3>
+            <p>〇（）と申します。</p>
+            <p>前職では、SNSに関連する事務仕事を3年、サービス業（葬儀・イベント会社など）5年ほど経験。</p>
+            <p>現在はWeb制作の分野で新しいキャリアを築いています。丁寧な対応と、学び続ける姿勢を大切にしています。</p>
+          </div>
+          <div class="column">
+            <h3 class="underline-title">人物</h3>
+            <p>生れ：年月</p>
+            <p>育ち：</p>
+            <p>趣味：読書、散歩、写真・日本画（Instagramをご覧くださいませ）</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="css-section" class="content-section">
+  <div class="inner">
+    <h2 class="section-title">
+      <img src="./img/study.png" alt="study" class="title-icon"> できること
+    </h2>
+
+    <div class="column-wrapper">
+
+      <!-- Officeソフト -->
+      <div class="column">
+        <h3 class="underline-title">Officeソフト</h3>
+        <p>Excel：VLOOKUP・IF など 3年</p>
+        <p>Word：日報作成など 1年</p>
+        <p>Google Slide：資料作成 1年</p>
+      </div>
+
+      <!-- マークアップ・プログラミング -->
+      <div class="column indent">
+        <h3 class="underline-title">マークアップ・プログラミング</h3>
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JavaScript</p>
+        <p>python</p>
+      </div>
+
+      <!-- Web解析・マーケティング -->
+<div class="column indent">
+  <h3 class="underline-title">Web解析・マーケティング</h3>
+  <p>訓練校にて身につけたことをリストにしています。↓↓↓</p>
+  <p>作成したレポートは、作品にて掲載しております。</p>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+    <!-- マーケティング基礎チェック -->
+    <section id="marketing-checklist" class="content-section">
+      <div class="inner">
+        <div class="checklist">
+          <div class="checklist-group">
+            <h3 class="underline-title">市場分析・環境分析</h3>
+            <ul>
+              <li><label>3C分析</label></li>
+              <li><label>SWOT分析</label></li>
+              <li><label>PEST分析</label></li>
+              <li><label>STP分析</label></li>
+            </ul>
+          </div>
+          <div class="checklist-group">
+            <h3 class="underline-title">顧客理解</h3>
+            <ul>
+              <li><label>ペルソナ</label></li>
+              <li><label>カスタマージャーニー</label></li>
+              <li><label>セグメンテーション</label></li>
+              <li><label>バリュープロポジション</label></li>
+            </ul>
+          </div>
+          <div class="checklist-group">
+            <h3 class="underline-title">戦略・施策立案</h3>
+            <ul>
+              <li><label>4P</label></li>
+              <li><label>4C</label></li>
+              <li><label>ブランド・エクイティ</label></li>
+              <li><label>マーケティングミックス</label></li>
+            </ul>
+          </div>
+          <div class="checklist-group">
+            <h3 class="underline-title">デジタル・施策</h3>
+            <ul>
+              <li><label>KPI / KGI / KSF</label></li>
+              <li><label>CPA / CVR / ROAS / ROI</label></li>
+              <li><label>SEO / SEM / SNSマーケティング</label></li>
+            </ul>
+          </div>
+          <div class="checklist-group">
+            <h3 class="underline-title">消費者行動</h3>
+            <ul>
+              <li><label>インサイト</label></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="js-section" class="content-section">
+      <div class="inner">
+        <h2 class="section-title"><img src="./img/work.png" alt="work" class="title-icon"> 作品</h2>
+        <ul class="social-links">
+          <li>
+            <a href="https://www.instagram.com/your_instagram_id/" target="_blank" rel="noopener noreferrer" class="icon-link">
+              <img src="./img/insta.png" alt="Instagram">
+            </a>
+            <p>PB</p>
+          </li>
+          <li>
+            <a href="https://github.com/your_github_id" target="_blank" rel="noopener noreferrer" class="icon-link">
+              <img src="img/github.png" alt="GitHub">
+            </a>
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+          </li>
+          <li>
+            <a href="https://github.com/your_github_id" target="_blank" rel="noopener noreferrer" class="icon-link">
+              <img src="./img/doc.png" alt="report">
+            </a>
+            <p>Google skill</p>
+            <p>マーケティング<br>レポート</p>
+          </li>
+          <!-- <li>
+            <a href="https://example.com/your_link" target="_blank" rel="noopener noreferrer" class="icon-link">
+              <img src="./img/other.webp" alt="Other">
+            </a>
+            <p>New Item</p>
+          </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact-section" class="content-section">
+      <div class="inner">
+        <h2 class="section-title"><img src="./img/contact.png" alt="contact" class="title-icon"> お問い合わせ</h2>
+        <p>以下からお気軽にご連絡ください。</p>
+        <ul class="contact-links">
+          <li>
+            <a href="mailto:info@example.com" class="icon-link">
+              <img src="./img/gmail.png" alt="メール">
+            </a>
+            <p>○○○○@gmail.com</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small class="footer-copy">&copy; 2025 〇</small>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
