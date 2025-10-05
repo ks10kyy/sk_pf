@@ -35,9 +35,7 @@ body {
   color: #0000ff;
   letter-spacing: -0.02em;
 }
-.site-footer small {
-  font-size: .8rem;
-}
+.site-footer small { font-size: .8rem; }
 
 /* ────────────────────────
    ハンバーガーメニュー
@@ -62,22 +60,14 @@ body {
   transition: transform .3s ease, opacity .3s ease;
   position: relative;
 }
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
 
 /* ────────────────────────
    ヘッダーナビ
 ──────────────────────── */
-.header-nav {
-  margin-top: 10px;
-}
+.header-nav { margin-top: 10px; }
 .header-nav ul {
   display: flex;
   gap: 2rem;
@@ -85,11 +75,7 @@ body {
   padding: 0;
   list-style: none;
 }
-.header-nav a {
-  color: #333;
-  text-decoration: none;
-  font-weight: 600;
-}
+.header-nav a { color: #333; text-decoration: none; font-weight: 600; }
 
 /* ────────────────────────
    言語切替
@@ -175,45 +161,35 @@ ul li:last-child { margin-bottom: 0; }
 /* ────────────────────────
    セクション共通
 ──────────────────────── */
-.content-section { 
-  
-  padding: 80px 20px; background: #fdf8f3; text-align: center; }
+.content-section { padding: 80px 20px; background: #fdf8f3; text-align: center; }
 #css-section { margin-bottom: 60px; }
 #css-section h2 { margin-bottom: 50px; font-size: 2.5rem; }
 h2 { font-size: 2.5rem; margin: 60px 0 40px; }
-.content-section .inner {
-   
-  max-width: 960px; margin: 0 auto; padding: 0 20px; }
-.underline-title{
+.content-section .inner { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+.underline-title {
   border-bottom: 2px solid #333;
   font-size: 1.5rem;
-   margin-bottom: 1rem; 
-    padding-bottom: .3rem;
-} 
+  margin-bottom: 1rem;
+  padding-bottom: .3rem;
+  white-space: nowrap; /* ← 改行を防止 */
+}
 
-
-/* 略歴  & スキル*/
-/* 自己紹介の2カラム化 */
+/* 略歴 & スキル */
 #html-section .column-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 40px;
 }
-
 #html-section .column {
-  flex: 1 1 calc(50% - 20px); /* 2カラム */
+  flex: 1 1 calc(50% - 20px);
   min-width: 280px;
   max-width: 450px;
   text-align: left;
-  
 }
-
 @media (max-width: 768px) {
-  #html-section .column {
-    flex: 1 1 100%;
-    text-align: center;
-  }
+  #html-section .column { flex: 1 1 100%; text-align: center; }
 }
 
 /* できることセクションも2カラム */
@@ -223,41 +199,53 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
   gap: 40px;
   justify-content: space-between;
 }
-
 #css-section .column {
   flex: 1 1 calc(50% - 20px);
   min-width: 280px;
   max-width: 450px;
   text-align: left;
 }
-
-#css-section .column.indent {
-  margin-left: 0; /* 個別の左ずらしは不要に調整 */
-}
-
+#css-section .column.indent { margin-left: 0; }
 @media (max-width: 768px) {
-  #css-section .column {
-    flex: 1 1 100%;
-    text-align: center;
-    margin-left: 0 !important;
-  }
+  #css-section .column { flex: 1 1 100%; text-align: center; margin-left: 0 !important; }
 }
 
-/* 2カラム化 */
+/* ────────────────────────
+   マーケティング基礎チェック
+──────────────────────── */
 #marketing-checklist .checklist {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   justify-content: space-between;
 }
-
 #marketing-checklist .checklist-group {
   flex: 1 1 calc(50% - 20px);
   min-width: 280px;
   max-width: 450px;
   text-align: left;
 }
+#marketing-checklist .checklist-group ul { list-style: none; padding: 0; margin: 0; }
 
+/* PC用チェックマーク */
+#marketing-checklist .checklist-group li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+}
+#marketing-checklist .checklist-group li::before {
+  content: "✔";
+  color: #0000ff !important;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1;
+}
+#marketing-checklist .checklist-group li label { display: block; margin: 0; padding: 0; }
+
+/* スマホ用チェックマーク修正 */
 @media (max-width: 768px) {
   #marketing-checklist .checklist {
     flex-direction: column;
@@ -269,71 +257,24 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
     text-align: center;
     margin-bottom: 30px;
   }
-}
-
-/* マーケティング基礎チェック：チェックマーク表示 */
-/* PC・デフォルト */
-#marketing-checklist .checklist-group ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* チェックマーク用の疑似要素 */
-#marketing-checklist .checklist-group li {
-  position: relative; /* ::before の基準 */
-  padding-left: 28px; /* チェックマーク分の余白 */
-  margin-bottom: 10px;
-}
-
-/* チェックマーク */
-#marketing-checklist .checklist-group li::before {
-  content: "✔";
-  color: #0000ff !important; /* 常に青 */
-  font-weight: bold;
-  font-size: 1rem;
-  position: absolute;  /* 左寄せ */
-  left: 0;
-  top: 0;
-  line-height: 1;
-}
-
-
-/* ラベル自体はそのまま表示 */
-#marketing-checklist .checklist-group li label {
-  display: block;      /* 縦並び維持 */
-  margin: 0;
-  padding: 0;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
   #marketing-checklist .checklist-group li {
-    justify-content: center; /* 中央寄せ */
-    padding-left: 0;        /* 左余白を削除 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    margin-bottom: 8px;
   }
-
   #marketing-checklist .checklist-group li::before {
-    position: static;       /* 絶対配置解除 */
-    display: inline-block;  /* ラベルの前に並ぶ */
-    margin-right: 6px;      /* 文字との間隔 */
-    color: #0000ff !important; /* 色を必ず青に */
+    position: static;
+    display: inline-block;
+    margin-right: 6px;
+    color: #0000ff !important;
   }
-
-  #marketing-checklist .checklist-group li label {
-    text-align: center;     /* 中央揃え */
-  }
+  #marketing-checklist .checklist-group li label { text-align: center; display: inline; }
 }
-
-
 
 /* アイコンリンク */
-.icon-link img { 
-  width: 60px;
-   height: 60px; 
-   object-fit: contain;
-  list-style: none;
-  }
+.icon-link img { width: 60px; height: 60px; object-fit: contain; list-style: none; }
 .icon-link { display: inline-block; }
 
 /* 見出しアイコン付き */
@@ -345,107 +286,49 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
   margin: 50px 0 30px;
 }
 .title-icon { width: 40px; transform: translateY(5px); }
-
 @media (max-width: 768px) {
   .section-title {
     display: flex;
-    flex-wrap: nowrap;       /* スマホで改行を許可 */
-    justify-content: center; /* 中央寄せ */
-    font-size: 1.8rem;     /* 少し小さくする */
+    flex-wrap: nowrap;       /* 改行禁止 */
+    justify-content: center;
+    font-size: 1.8rem;
     text-align: center;
   }
-
-  .section-title img {
-    width: 32px;           /* アイコンを少し小さく */
-    margin-bottom: 8px;    /* 折り返し時に余白を取る */
-  }
+  .section-title img { width: 32px; margin-bottom: 0; }
 }
-
-
-
 
 /* SNS・メール */
 .social-links {
   display: flex;
-  justify-content: space-between; /* 均等配置 */
-  gap: 20px; /* アイテム間の余白 */
+  justify-content: space-between;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .social-links li {
-  flex: 1; /* 均等幅 */
-  text-align: center; /* 中央寄せ */
-  /* background: #fff; 必要ならカード風に */
+  flex: 1;
+  text-align: center;
   padding: 16px;
   border-radius: 8px;
-  /* border: 1px solid #ddd; デザイン次第で調整 */
 }
-
-.social-links img {
-  max-width: 60px; /* アイコンサイズ調整 */
-  margin-bottom: 10px;
-}
-.contact-links {
-  list-style: none;   /* ✅ 点を消す */
-  padding: 0;
-  margin: 0;
-}
-
+.social-links img { max-width: 60px; margin-bottom: 10px; }
+.contact-links { list-style: none; padding: 0; margin: 0; }
 
 @media (max-width: 768px) {
-  .social-links {
-    flex-direction: column; /* スマホは縦並び */
-    align-items: center;
-  }
+  .social-links { flex-direction: column; align-items: center; }
+  .social-links li { width: 100%; max-width: 400px; }
 
-  .social-links li {
-    width: 100%;
-    max-width: 400px;
-  }
-}
+  .hamburger{ display:flex; }
+  .header-nav{ display:none; position:absolute; top:100%; left:0; width:100%; background:#fdf8f3; }
+  .header-nav.active{ display:block; }
+  .header-nav ul{ flex-direction: column; }
+  .header-nav li{ text-align:center; padding:.2rem 0; border-top:1px solid #ccc; }
+  .header-nav li:last-child{ margin-bottom:1.5rem; }
 
+  .hero-profile{ flex-direction:column; align-items:center; margin-bottom:30px; }
+  .hero-name{ margin-right:0; text-align:center; font-size:3rem; }
+  .hero-image img{ width:300px; }
 
-/* ────────────────────────
-   レスポンシブ
-──────────────────────── */
-@media(max-width:768px){
-  .hamburger{display:flex;}
-  .header-nav{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    width:100%;
-    background:#fdf8f3;
-  }
-  .header-nav.active{display:block;}
-  .header-nav ul{flex-direction:column;}
-  .header-nav li{
-    text-align:center;
-    padding:.2rem 0;
-    border-top:1px solid #ccc;
-  }
-  .header-nav li:last-child{margin-bottom:1.5rem;}
-
-  .hero-profile{flex-direction:column;align-items:center;margin-bottom:30px;}
-  .hero-name{margin-right:0;text-align:center;font-size:3rem;}
-  .hero-image img{width:300px;}
-
-  .skill-grid{grid-template-columns:1fr;}
-
-  .checklist {
-    flex-direction: column;
-    align-items: center;
-  }
-  .checklist-group {
-    width: 100%;
-    max-width: 360px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .checklist-group ul { margin: 0 auto; }
-  .checklist-group li { margin-bottom: 8px; }
-  .checklist-group label { padding-left: 24px; }
+  .skill-grid{ grid-template-columns:1fr; }
 }
