@@ -281,22 +281,23 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
 
 /* チェックマーク用の疑似要素 */
 #marketing-checklist .checklist-group li {
-  position: relative; /* ::beforeの基準にする */
-  padding-left: 28px; /* チェックマーク分の余白を確保 */
+  position: relative; /* ::before の基準 */
+  padding-left: 28px; /* チェックマーク分の余白 */
   margin-bottom: 10px;
 }
 
 /* チェックマーク */
 #marketing-checklist .checklist-group li::before {
   content: "✔";
-  color: #0000ff !important; /* 青色に固定 */
+  color: #0000ff !important; /* 常に青 */
   font-weight: bold;
   font-size: 1rem;
-  position: absolute;  /* ラベルの左に固定配置 */
+  position: absolute;  /* 左寄せ */
   left: 0;
   top: 0;
-  line-height: 1;      /* 高さを詰める */
+  line-height: 1;
 }
+
 
 /* ラベル自体はそのまま表示 */
 #marketing-checklist .checklist-group li label {
@@ -305,19 +306,24 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
   padding: 0;
 }
 
-/* スマホ用 */
+/* スマホ対応 */
 @media (max-width: 768px) {
   #marketing-checklist .checklist-group li {
-    text-align: center;
-    padding-left: 0;      /* 中央寄せ時は余白不要 */
+    justify-content: center; /* 中央寄せ */
+    padding-left: 0;        /* 左余白を削除 */
   }
+
   #marketing-checklist .checklist-group li::before {
-    position: static;      /* 絶対配置を解除 */
-    display: inline-block;
-    margin-right: 6px;     /* 文字との間隔 */
+    position: static;       /* 絶対配置解除 */
+    display: inline-block;  /* ラベルの前に並ぶ */
+    margin-right: 6px;      /* 文字との間隔 */
+    color: #0000ff !important; /* 色を必ず青に */
+  }
+
+  #marketing-checklist .checklist-group li label {
+    text-align: center;     /* 中央揃え */
   }
 }
-
 
 
 
