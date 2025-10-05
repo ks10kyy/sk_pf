@@ -271,8 +271,26 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
   }
 }
 
-/* マーケティング基礎チェック：チェックマーク表示 */
-/* PC・デフォルト */
+/* ────────────────────────
+   マーケティング基礎チェック
+──────────────────────── */
+/* ────────────────────────
+   マーケティング基礎チェック（チェックマークなし）
+──────────────────────── */
+#marketing-checklist .checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+#marketing-checklist .checklist-group {
+  flex: 1 1 calc(50% - 20px);
+  min-width: 280px;
+  max-width: 450px;
+  text-align: left;
+}
+
 #marketing-checklist .checklist-group ul {
   list-style: none;
   padding: 0;
@@ -280,25 +298,33 @@ h2 { font-size: 2.5rem; margin: 60px 0 40px; }
 }
 
 #marketing-checklist .checklist-group li {
-  display: flex;       /* ✔ と文字を横並び */
-  align-items: center; /* ✔ と文字の縦位置を揃える */
-  margin-bottom: 10px;
-  gap: 6px;            /* ✔ と文字の間隔 */
-  justify-content: flex-start; /* PCでは左寄せ */
+  display: block; /* 縦並びに戻す */
+  margin-bottom: 10px; /* 下に余白 */
 }
 
-#marketing-checklist .checklist-group li::before {
-  content: "✔";
-  color: #0000ff !important; /* ← これで固定 */
-  font-weight: bold;
-  font-size: 1rem;
-  flex-shrink: 0; /* ✔が潰れないように */
+#marketing-checklist .checklist-group li label {
+  padding-left: 0; /* チェックマーク用余白を削除 */
 }
 
-/* スマホ用 */
 @media (max-width: 768px) {
+  #marketing-checklist .checklist {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #marketing-checklist .checklist-group {
+    flex: 1 1 100%;
+    max-width: 360px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
   #marketing-checklist .checklist-group li {
-    justify-content: center; /* スマホでは中央寄せ */
+    margin-bottom: 8px;
+  }
+
+  #marketing-checklist .checklist-group li label {
+    padding-left: 0; /* スマホでも余白なし */
   }
 }
 
